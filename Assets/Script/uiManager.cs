@@ -29,7 +29,7 @@ public class uiManager : MonoBehaviour {
     // Triggered when exit button is pressed in the menu scene
     public void exitButtonPress()
     {
-        Application.Exit();
+        Application.Quit();
         Debug.Log("The application is closing...");
     }
 
