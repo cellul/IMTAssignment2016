@@ -75,16 +75,7 @@ public class uiManager : MonoBehaviour {
     //Triggered when the pause button is pressed in the game scene
     public void pauseButtonPress()
     {
-	//if the game is running, it gets paused and vice versa
-        if (Time.timeScale == 1){
-            Time.timeScale = 0;
-            pause.text = "►";
-        }else if (Time.timeScale == 0)
-        {
-            Time.timeScale = 1;
-            pause.text = "▍▍";
-        }
-
+	Time.timeScale = 0;
     }
 
     //Triggered when the mute button is pressed in the game scene
