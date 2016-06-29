@@ -132,10 +132,7 @@ public class uiManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        AudioListener.pause = false;
-	Time.timeScale = 1;
-            
-	canMute = true; //can mute is true at the beginning of the game because sound is playing
+        canMute = true; //can mute is true at the beginning of the game because sound is playing
         collide = false; //collide is false at the beginning of the game
         InvokeRepeating("scoreUpdate", 1.0f, 0.5f); //update the score every 0.5 seconds
     }
