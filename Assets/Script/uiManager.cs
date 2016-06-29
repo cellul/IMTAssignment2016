@@ -81,17 +81,7 @@ public class uiManager : MonoBehaviour {
     //Triggered when the mute button is pressed in the game scene
     public void muteButtonPress()
     {
-	//if the game is muted, sound gets playing and vice versa
-        if (canMute){
-            AudioListener.pause = true;
-            canMute = false;
-            mute.text = "UNMUTE";
-        }else{
-            AudioListener.pause = false;
-            canMute = true;
-            mute.text = "MUTE";
-        }
-
+	AudioListener.pause = true;
     }
 
     //Increments the score by 1
