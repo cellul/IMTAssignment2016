@@ -29,7 +29,7 @@ public class uiManager : MonoBehaviour {
     // Triggered when exit button is pressed in the menu scene
     public void exitButtonPress()
     {
-        Application.Exit();
+        Application.Quit();
         Debug.Log("The application is closing...");
     }
 
@@ -75,14 +75,34 @@ public class uiManager : MonoBehaviour {
     //Triggered when the pause button is pressed in the game scene
     public void pauseButtonPress()
     {
-	Time.timeScale = 0;
+	//if the game is running, it gets paused and vice versa
+        if (Time.timeScale == 1){
+            Time.timeScale = 0;
+            pause.text = "►";
+        }else if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+            pause.text = "▍▍";
+        }
+
     }
 
     //Triggered when the mute button is pressed in the game scene
     public void muteButtonPress()
     {
-	AudioListener.pause = true;
+	//if the game is muted, sound gets playing and vice versa
+        if (canMute){
+            AudioListener.pause = true;
+            canMute = false;
+            mute.text = "UNMUTE";
+        }else{
+            AudioListener.pause = false;
+            canMute = true;
+            mute.text = "MUTE";
+        }
+
     }
+
 
     //Increments the score by 1
     public void scoreUpdate(){
