@@ -39,8 +39,8 @@ public class carManager : MonoBehaviour {
         {
             if (ui.lives <= 0)
             {
-                Destroy(gameObject);
                 Destroy(col.gameObject);
+                Destroy(gameObject);
                 //if the saved score is less than the current score
                 if (PlayerPrefs.GetInt("score") < ui.score)
                 {
@@ -50,6 +50,7 @@ public class carManager : MonoBehaviour {
             }
             else
             {
+                Destroy(col.gameObject);
                 //if the saved score is less than the current score
                 if (PlayerPrefs.GetInt("score") < ui.score)
                 {
@@ -61,7 +62,6 @@ public class carManager : MonoBehaviour {
                 am.carSound.Stop();
                 //yield return new WaitForSeconds(1);
                 am.carSound.Play();
-                Destroy(col.gameObject);
                 //Instantiate(car, transform.position, transform.rotation); //reinstantiate the car
             }
 
